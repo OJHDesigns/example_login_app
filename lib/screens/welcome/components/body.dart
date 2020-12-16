@@ -1,15 +1,14 @@
 import 'package:example_login_app/components/rounded_button.dart';
 import 'package:example_login_app/constants.dart';
 import 'package:example_login_app/screens/login/login_screen.dart';
+import 'package:example_login_app/screens/register/register_screen.dart';
 import 'package:example_login_app/screens/welcome/components/background.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Body extends StatelessWidget {
-  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    // This size provides us the total height and width of our screen
     return Background(
       child: SingleChildScrollView(
         child: Column(
@@ -42,7 +41,16 @@ class Body extends StatelessWidget {
               text: "REGISTER",
               color: kPrimaryLightColor,
               textColor: Colors.black,
-              press: () {},
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return RegisterScreen();
+                    },
+                  ),
+                );
+              },
             ),
           ],
         ),
